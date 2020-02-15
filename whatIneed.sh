@@ -9,28 +9,29 @@ git pull
 
 ## add required stuff
 ### kubectl
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+#curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+#echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 
 
 ## final update
 #apt-get update
 ## install general
-apt-get install -y git ansible bash-completion curl zsh
+apt-get install -y git ansible curl net-tools
 
 
 #### helm
-curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+#curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 
 ## make zsh default
-chsh -s $(which zsh)
+#chsh -s $(which zsh)
 
-if ! grep -q "HISTSIZE=10000000" ~/.zshrc; then
-    cat >> ~/.zshrc <<EOL
-    HISTSIZE=10000000
-    SAVEHIST=10000000
-    EOL
-fi
+#if ! grep -q "HISTSIZE=10000000" ~/.zshrc; then
+#    cat >> ~/.zshrc <<EOL
+#    HISTSIZE=10000000
+#    SAVEHIST=10000000
+#    EOL
+#fi
 
 
 
+ansible-galaxy install -r ansible-requirements.yml

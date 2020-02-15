@@ -1,0 +1,8 @@
+# from galaxy
+- src: gantsign.oh-my-zsh
+  oh_my_zsh_plugins:
+    - git
+    - helm
+    - kubectl
+- src: gantsign.helm
+- src: andrewrothstein.kubectl
